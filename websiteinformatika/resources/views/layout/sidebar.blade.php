@@ -16,10 +16,12 @@
           <li><a href="https://www.freecodecamp.org/">freecodecamp</a></li>
         </ul>
         <h3>Search</h3>
-        <form method="post" action="#" id="search_form">
+        <form method="GET" action="{{ route('search') }}" id="search_form">
           <p>
-            <input class="search" type="text" name="search_field" value="Enter keywords....." />
-            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+            <input class="search" type="text" name="query" placeholder="Enter keywords....." 
+                   onfocus="if(this.value=='Enter keywords.....'){this.value='';}"
+                   onblur="if(this.value==''){this.value='Enter keywords.....';}" />
+            <input type="submit" value="Search" class="submit-search" />
           </p>
         </form>
       </div>
