@@ -39,5 +39,8 @@ Route::get('/admin', function () {
 Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
 Route::post('/pegawai/store', [PegawaiController::class, 'store']);
+Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
+Route::post('/pegawai/update/{id}', [PegawaiController::class, 'update']);
+Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
