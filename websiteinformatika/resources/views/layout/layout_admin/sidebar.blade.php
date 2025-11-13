@@ -25,7 +25,7 @@
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <a
-                    class="nav-link d-flex align-items-center gap-2 active"
+                    class="nav-link d-flex align-items-center gap-2 {{ request()->is('admin') ? 'active' : '' }}"
                     aria-current="page"
                     href="{{url('/admin')}}"
                   >
@@ -36,7 +36,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="{{url('/')}}">
+                  <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('mahasiswa') ? 'active' : '' }}" href="{{url('/mahasiswa')}}">
                     <svg class="bi" aria-hidden="true">
                       <use xlink:href="#people"></use>
                     </svg>
@@ -44,11 +44,19 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="{{url('/pegawai')}}">
+                  <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('pegawai') ? 'active' : '' }}" href="{{url('/pegawai')}}">
                     <svg class="bi" aria-hidden="true">
                       <use xlink:href="#people"></use>
                     </svg>
                     Pegawai
+                  </a>
+                </li>
+                                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('pegawai') ? 'active' : '' }}" href="{{url('/upload')}}">
+                    <svg class="bi" aria-hidden="true">
+                      <use xlink:href="#people"></use>
+                    </svg>
+                    Upload FIle
                   </a>
                 </li>
               </ul>
@@ -63,7 +71,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                  <a class="nav-link d-flex align-items-center gap-2" href="{{url('/logout')}}">
                     <svg class="bi" aria-hidden="true">
                       <use xlink:href="#door-closed"></use>
                     </svg>

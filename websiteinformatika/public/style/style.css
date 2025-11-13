@@ -112,6 +112,32 @@ ol li
   padding: 0;
   color: #444;}
 
+/* Header auth buttons */
+.header-auth {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+}
+.auth-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-left: 8px;
+  font-size: 90%;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.auth-btn.login {
+  background: #FFF;
+  color: #111;
+  border: 1px solid #EEE;
+}
+.auth-btn.register {
+  background: #FFF;
+  color: #111;
+  border: 1px solid #EEE;
+}
+.auth-btn:hover { opacity: 0.9; }
+
 #menubar
 { width: 890px;
   height: 35px;

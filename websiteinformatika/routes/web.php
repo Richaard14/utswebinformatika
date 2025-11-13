@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FileController;
 
 Route::get('/beranda', function () {
     return view('beranda.beranda');
@@ -24,9 +27,7 @@ Route::get('/riset', function () {
     return view('riset.riset');
 });
 
-Route::get('/mahasiswa', function () {
-    return view('mahasiswa.mhs');
-});
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 
 Route::get('/lain_lainya', function () {
     return view('lain_lainya.lain');
@@ -42,5 +43,17 @@ Route::post('/pegawai/store', [PegawaiController::class, 'store']);
 Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
 Route::post('/pegawai/update/{id}', [PegawaiController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
+Route::post('/pegawai/cari/{id}', [PegawaiController::class, 'pencarian']);
+Route::post('/pegawai/cari/', [PegawaiController::class, 'pencarian']);
 
-Route::get('/search', [SearchController::class, 'search'])->name('search');
+//user
+Route::get('/daftar', [AuthController::class, 'registationform']);
+Route::post('/daftar', [AuthController::class, 'register']);
+Route::get('/login', [AuthController::class, 'loginform']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
+// url file
+Route::get('/upload', [FileController::class, 'index']);
+Route::post('/upload', [FileController::class, 'store']);
+Route::delete('/upload/{id}', [FileController::class, 'destroy'])->name('upload.destroy');

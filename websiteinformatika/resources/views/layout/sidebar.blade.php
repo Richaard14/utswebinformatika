@@ -15,13 +15,5 @@
           <li><a href="https://www.codewars.com/">codewars</a></li>
           <li><a href="https://www.freecodecamp.org/">freecodecamp</a></li>
         </ul>
-        <h3>Search</h3>
-        <form method="GET" action="{{ route('search') }}" id="search_form">
-          <p>
-            <input class="search" type="text" name="query" placeholder="Enter keywords....." 
-                   onfocus="if(this.value=='Enter keywords.....'){this.value='';}"
-                   onblur="if(this.value==''){this.value='Enter keywords.....';}" />
-            <input type="submit" value="Search" class="submit-search" />
-          </p>
         </form>
       </div>
